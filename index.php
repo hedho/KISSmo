@@ -14,7 +14,14 @@ $ncsite="paste.uk.to 7777";
 
 <link rel="stylesheet" href="./style.css">
 	<title>Running under KISSmo Paste</title>
-	<center><h2>Runing KISSmo Paste</h2></center><br>
+	<center>
+<pre>Running</pre>
+<pre>  _  _____ ___ ___           
+ | |/ /_ _/ __/ __|_ __  ___ 
+ | ' &lt; | |\__ \__ \ '  \/ _ \
+ |_|\_\___|___/___/_|_|_\___/
+</pre>
+</center><br>
 	<center><a href="./">Paste</a> | <a href="./archive.php">Archive</a></center>
         <center><form name="form" method="post">
             <textarea name="text_box" cols="40" minlength="5" rows="5" placeholder="Paste your code here..." maxlength="1048576" style="margin: 0px; width: 80%; height: 249px;" required pattern="\S+" oninvalid="this.setCustomValidity('We apologize but we won`t allow empty paste!')" oninput="this.setCustomValidity('')"></textarea> 
@@ -80,4 +87,3 @@ if(isset($_POST['text_box'])) { //only do file operations when appropriate
 	echo "<br>";
     }
 ?>
-
