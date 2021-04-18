@@ -1,0 +1,91 @@
+/************************************************************
+** style.css 2021 monaco
+** Style css for KISSmo Paste
+** Copyright monaco@ircnow.org
+** Copyright Ircnow
+** This file is part of KISSmo Paste.
+************************************************************/
+
+body {
+background: whitesmoke;
+font-family: monospace;
+}
+span.error {
+display: block;
+padding: 5px;
+background: red;
+color: white;
+}
+span.hidden {
+visibility: hidden;
+padding: 0;
+margin: 0;
+}
+span.success {
+display: block;
+padding: 5px;
+background: green;
+color: white;
+}
+
+span.mon {
+    display: block;
+    padding: 5px;
+    background: #3eb93e;
+    color: white;
+}
+
+span.success.hidden {
+visibility: hidden;
+padding: 0;
+margin: 0;
+}
+pre.cmdbox {
+    background: #F5F5F5;
+    border: 1px solid #AAAAAA;
+    overflow: auto;
+    padding: 10px;
+}
+
+input:required,
+textarea:required {
+  border-color: red !important;
+}
+input:required + label {
+  color: red;
+}
+
+form div {
+  padding: 5px;
+}
+label {
+  display: block;
+}
+input + label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+textarea[type=text_box],
+textarea {
+  border: 1px solid #999;
+  padding: 5px;
+  width: 100%;
+}
+
+textarea {
+	background: url(./lines.png);
+	background-attachment: local;
+	background-repeat: no-repeat;
+	padding-left: 35px;
+	padding-top: 10px;
+	border-color:#ccc;
+}
+
+div.b {
+  word-wrap: break-word;
+}
+
+pre {
+  word-wrap: break-word;
+}
