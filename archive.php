@@ -4,10 +4,18 @@
   // else ob_start();
 ?>
 <title>KISSmo Archive</title>
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 <meta name="HandheldFriendly" content="true">
+
+
+
+
+<body>
+    
+
         <center><h2>Runing KISSmo Paste</h2></center><br>
 	<center><form method="POST" action="archive.php" class="search" enctype="multipart/form-data" autocomplete="off">
        <input type="text" name="query" maxlength=75 class="searchbox" minlength=3 placeholder="Enter keywords" required>
@@ -107,17 +115,18 @@ echo "<br><br>";
   ?>
 
 <div class="pagination">
-  <a class="btn" <?= $page <= 1 ? 'disabled' : '' ?> href="?page=<?= $page - 1 ?>">&larr;</a>
+  <a <?= $page <= 1 ? 'disabled' : '' ?> href="?page=<?= $page - 1 ?>">&larr;</a>
   <?php
     $len = count($filelist) / $options['quantity'];
     for ($i = 1; $i < $len + 1; $i++) {
       if (($i == 1 || $i > $len) || ($i > $page - $options['around'] && $i < $page + $options['around'])) {
-        echo '<a class="btn '. ($page == $i ? 'active' : '') .'" href="?page='.$i.'">'. $i .'</a>';
+        echo '<a class="'. ($page == $i ? 'active' : '') .'" href="?page='.$i.'">'. $i .'</a>';
       } elseif ($i > $page - $options['around'] - 1 && $i < $page + $options['around'] + 1) {
         echo '<a disabled class="btn">&hellip;</a>';
       }
     }
   ?>
-  <a class="btn" <?= $page >= $len ? 'disabled' : '' ?> href="?page=<?= $page + 1 ?>">&rarr;</a>
+  <a <?= $page >= $len ? 'disabled' : '' ?> href="?page=<?= $page + 1 ?>">&rarr;</a>
+</ul>
 </div>
-
+</body>
