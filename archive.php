@@ -64,15 +64,35 @@ echo "</pre><br>";
         <center><a href="./">Paste</a> | <a href="./archive.php">Archive</a></center>
 
 <?php
+// Set the current working directory
+$directory = getcwd()."/p/";
+
+// Initialize filecount variavle
+$filecount = 0;
+
+$files2 = glob( $directory ."*" );
+
+if( $files2 ) {
+    $filecount = count($files2);
+}
+
+echo "Currently archiving: ";
+echo $filecount . " paste files ";
+
+echo "<br><br>";
+
+?>
+
+  <?php
     $options = array(
-      'quantity'  => 15, // how many item to display for each page
-      'around'    => 2,  // how many page btn to show around the current page btn
+      'quantity'  => 30, // how many item to display for each page
+      'around'    => 7,  // how many page btn to show around the current page btn
       'directory' => './p', // dir to scan for items
     );
 
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
     $offset = ($page - 1) * $options['quantity']; // $page base index is 1
-    $filelist =  array_diff(scandir($options['directory']), array('..', '.','index.txt'));
+    $filelist =  array_diff(scandir($options['directory']), array('..', '.'));
 
      //get subset of file array
     $selectedFiles = array_slice($filelist, $offset, $options['quantity']);
