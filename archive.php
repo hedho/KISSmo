@@ -1,7 +1,7 @@
 <?php
-   if (substr_count($_SERVER[HTTP_ACCEPT_ENCODING], gzip))
-   ob_start(ob_gzhandler);
-   else ob_start();
+  // if (substr_count($_SERVER[HTTP_ACCEPT_ENCODING], gzip))
+   //ob_start(ob_gzhandler);
+  // else ob_start();
 ?>
 <title>KISSmo Archive</title>
 <link rel="stylesheet" href="./style.css">
@@ -14,42 +14,90 @@
        <input type="submit" value="Search"></input>
 </form></center>
 <?php
-//*$zer = system('grep -l ' . escapeshellarg($_POST['query']) . ' *p/*.txt');
+
+
+
+
+
 if(isset($_POST['query'])) { //only do file operations when appropriate
 
 echo "<pre class='cmdbox'>";
-system('grep -l ' . escapeshellarg($_POST['query']) . ' *p/*.txt');
+$input = $_POST['query'];
+
+$directory = getcwd()."/p/";
+
+$txts= glob($directory. "*.txt") or DIE("Unable to open $directory");
+$found = 0;
+foreach ($txts as $txt){
+$searchfor = $_POST['query'];
+$file = $txt;
+
+$contents = file_get_contents($file);
+$pattern = preg_quote($searchfor, '/');
+$pattern = "/^.*$pattern.*\$/m";
+
+    if (preg_match_all($pattern, $contents, $matches)) {
+        
+        $path_parts = pathinfo($file);
+        $filename = $path_parts['basename'];
+        $link = "<a href='./p/$filename' target='_blank'>$filename </a><br />";
+        echo $link;
+        echo implode("<br />", $matches[0]);
+        echo '<br>';
+        echo '-----------------<br>';
+        $found = 1;
+    } 
+}
+
+if($found == 0)
+{
+  echo 'No match found';
+}
+
+
+
+
+  
 echo "</pre><br>";
 }
 ?>
         <center><a href="./">Paste</a> | <a href="./archive.php">Archive</a></center>
 
 <?php
-// Set the current working directory
-$directory = getcwd()."/p/";
+    $options = array(
+      'quantity'  => 15, // how many item to display for each page
+      'around'    => 2,  // how many page btn to show around the current page btn
+      'directory' => './p', // dir to scan for items
+    );
 
-// Initialize filecount variavle
-$filecount = 0;
+    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+    $offset = ($page - 1) * $options['quantity']; // $page base index is 1
+    $filelist =  array_diff(scandir($options['directory']), array('..', '.','index.txt'));
 
-$files2 = glob( $directory ."*" );
+     //get subset of file array
+    $selectedFiles = array_slice($filelist, $offset, $options['quantity']);
 
-if( $files2 ) {
-    $filecount = count($files2);
-}
+    foreach ($selectedFiles as $file) {
+      $path = $options['directory'] . '/' . $file;
 
-echo "Currently archiving: ";
-echo $filecount . " paste files ";
-
-echo "<br><br>";
-
-$dir_open = opendir('./p/');
-
-while(false !== ($filename = readdir($dir_open))){
-    if($filename != "." && $filename != ".."){
-        $link = "<a href='./p/$filename' target='_blank'> $filename </a><br />";
+        $link = "<a href='./p/$file' target='_blank'> $file </a><br />";
         echo $link;
+      
     }
-}
+  ?>
 
-closedir($dir_open);
-?>
+<div class="pagination">
+  <a class="btn" <?= $page <= 1 ? 'disabled' : '' ?> href="?page=<?= $page - 1 ?>">&larr;</a>
+  <?php
+    $len = count($filelist) / $options['quantity'];
+    for ($i = 1; $i < $len + 1; $i++) {
+      if (($i == 1 || $i > $len) || ($i > $page - $options['around'] && $i < $page + $options['around'])) {
+        echo '<a class="btn '. ($page == $i ? 'active' : '') .'" href="?page='.$i.'">'. $i .'</a>';
+      } elseif ($i > $page - $options['around'] - 1 && $i < $page + $options['around'] + 1) {
+        echo '<a disabled class="btn">&hellip;</a>';
+      }
+    }
+  ?>
+  <a class="btn" <?= $page >= $len ? 'disabled' : '' ?> href="?page=<?= $page + 1 ?>">&rarr;</a>
+</div>
+
