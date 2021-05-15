@@ -10,13 +10,15 @@
 
 <meta name="HandheldFriendly" content="true">
 
-
-
-
 <body>
-    
-
-        <center><h2>Runing KISSmo Paste</h2></center><br>
+<center>
+<pre>Running</pre>
+<pre>  _  _____ ___ ___           
+ | |/ /_ _/ __/ __|_ __  ___ 
+ | ' &lt; | |\__ \__ \ '  \/ _ \
+ |_|\_\___|___/___/_|_|_\___/
+</pre>
+</center><br>
 	<center><form method="POST" action="archive.php" class="search" enctype="multipart/form-data" autocomplete="off">
        <input type="text" name="query" maxlength=75 class="searchbox" minlength=3 placeholder="Enter keywords" required>
        <input type="submit" value="Search"></input>
