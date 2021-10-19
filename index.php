@@ -4,7 +4,7 @@
    else ob_start();
 ?>
 <?php
-$ncsite="paste.uk.to 7777";
+$ncsite="youresite.tld 7777";
 ?>
 <html>
     <body>
@@ -33,7 +33,7 @@ $ncsite="paste.uk.to 7777";
 	<br>
 	<center>Use this paste via terminal examples <span style="color:#e74c3c">"echo I was here | nc <?php echo"$ncsite";?>"</span> or <span style="color:#e74c3c">"cat example | nc <?php echo"$ncsite";?>"</span><center><br>
 	<center>KISS (Keep it simple, stupid) style pastebin developed from (monaco) with less than <span style="color:#e74c3c">70</span> Lines of code!</center>
-	<center>Running KISSmo v.1.0.0 stable > 1.5 KB</center>
+	<center>Running KISSmo v.1.0.0 stable > 1.5 KB, for any issue or request contact <a href="mailto:support@paste.oddprotocol.org">support@paste.oddprotocol.org</a> this is open-source project so feel free <a href="https://gitlab.com/hedho/KISSmo">Source avaliable at GitLab</a></center>
 	<br>
 <?php
 // Set the current working directory
@@ -57,7 +57,7 @@ echo $filecount . " paste files </center>";
     
 if(isset($_POST['text_box'])) { //only do file operations when appropriate
         
-	$sitename = "https://paste.ircnow.org/p";
+	$sitename = "https://youresitename.tld/p";
 	$a = $_POST['text_box'];
 	$powered = "### This content was generated under KISSmo Paste with love at this time:";
 	$tagz = "### ";
