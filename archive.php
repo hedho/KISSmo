@@ -25,10 +25,6 @@
 </form></center>
 <?php
 
-
-
-
-
 if(isset($_POST['query'])) { //only do file operations when appropriate
 
 echo "<pre class='cmdbox'>";
@@ -64,10 +60,6 @@ if($found == 0)
   echo 'No match found';
 }
 
-
-
-
-  
 echo "</pre><br>";
 }
 ?>
