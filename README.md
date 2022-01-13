@@ -38,4 +38,14 @@ KISSmo is fully compatible with Terminal Lynx or other terminal browsers!
 
 [![The Demo](https://i.imgur.com/J5j9icZ.png)](https://paste.oddprotocol.org)
 
+Disable searching feature:
+Open archive.php and remove this specific code as followed >
+```
+</center><br>
+	<center><form method="POST" action="archive.php" class="search" enctype="multipart/form-data" autocomplete="off">
+       <input type="text" name="query" maxlength=75 class="searchbox" minlength=3 placeholder="Enter keywords" required>
+       <input type="submit" value="Search"></input>
+</form></center>
+```
+
 Developed by monaco (C)
