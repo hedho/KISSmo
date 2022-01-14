@@ -2,12 +2,12 @@ Welcome to KISSmo Paste
 
 You can use it via terminal with Netcat with this command!
 
-cat file | nc monaco.uk.to 7777
+cat file | nc paste.oddprotocol.org 7777
 
 or
 
-echo KISSmo is awesome | nc monaco.uk.to 7777
+echo KISSmo is awesome | nc paste.oddprotocol.org 7777
 
 If you wanna use KISSmo web interface you're more than welcome:
 
-https://monaco.coconut.ircnow.org/test/
+https://paste.oddprotocol.org

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" id="release"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>KISSmo 1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://paste.oddprotocol.org/style.css">
+
+</head>
+<h2><i>KISS</i><b>mo</b></a>&nbsp;1.0 <a href="/">Home</a> | <a href="archive.php">Archive</a> | <a href="about.html">About</a> | <a href="./contact.php">Contact</a></h2>
+
+<table>
+<tbody><tr>
+<td>
+Released May 17, 2021. (1st KISSmo release)<br>
+Copyright 2021, init a.k.a monaco.<br>
+<ul>
+<li>To download KISSmo source visit our gitlab repositories&nbsp;<a href="https://gitlab.com/hedho/KISSmo" style="">Click here!</a>&nbsp;.
+</li><li>Keep it simple stupid (KISSmo paste).
+</li><li>KISSmo requires no database of anykind it is based on a flatfile paste system.</li></ul></td></tr></tbody></table><br>
+
+<hr>
+
+<section id="new">
+<h3>What's New</h3>
+<p>
+This is a partial list of new features included on KISSmo.
+
+</p><ul>
+
+<li>New/extended:
+  <ul>
+    <li>Added new/extended on KISSmo.
+    </li><li>Revision code of main index.php:
+    <ul>
+	<li>Support Nginx and OpenHTTPD it works on Apache aswell, soon will be added instructions how to for Apache aswel.<ul>
+	    <li>Added new features on archive such as Search with previews and links.
+	    </li><li>Duo to the new feature of search on archive we do recommended that you and nobody should contribute sensitive data to sites using KISSmo.</li><li>Added Nginx setup guide.
+	    </li><li>Added OpenHTTPD setup guide.
+	    </li><li>Added support for terminal browsers such as "lynx".
+	    </li><li>Added mobile device support.
+	    </li><li>Added new CSS.</li></ul></li></ul></li></ul></li></ul></section>
+
+<section id="install">
+<h3>Install</h3>
+<p>
+Please refer to the following links for download and help documents:
+
+</p><ul>
+<li>Gitlab.com Source Code</li></ul></section>
+
+<hr>
+
+<section id="upgrade">
+<h3>How to upgrade</h3>
+<p>Upgrade will not be painful as with other pieces of software you simply would need to replace 2 files index.php and archive.php for a new version, and add other features if another file has been added and would be explained why.
+</p></section>
+
+<hr>
+
+<section id="sourcecode">
+<h3>Nginx Config</h3>
+<p><code>Explain for howto make it work under systems running nginx.</code></p><blockquote><pre><pre class="code highlight" lang="plaintext"><b><span lang="plaintext" class="line" id="LC1">    location /p/ {</span>
+<span lang="plaintext" class="line" id="LC2">   alias /home/admin/web/paste.oddprotocol.org/public_html/p/;</span>
+<span lang="plaintext" class="line" id="LC3">   index index.txt;</span>
+<span lang="plaintext" class="line" id="LC4">   autoindex on;</span>
+<span lang="plaintext" class="line" id="LC5">}</span></b>
+</pre></pre></blockquote><blockquote><pre></pre></blockquote>
+<p>This configuration is needed to be added under nginx confing for that specific domain name that you're trying to run KISSmo.
+</p></section>
+
+<hr>
+
+<section id="ports">
+<h3>OpenHTTPD Config</h3>
+<p>
+AExplain howto make it work under system OpenBSD running OpenHTTPD:
+</p><blockquote><pre><pre class="code highlight" lang="plaintext"><b><span lang="plaintext" class="line" id="LC1">	location "/test/p/*" { </span>
+<span lang="plaintext" class="line" id="LC2">		directory { auto index, index "index.txt" }</span>
+<span lang="plaintext" class="line" id="LC3">	}</span></b>
+</pre></pre></blockquote>
+<p>[Under httpd.conf referring to the specific domain name configuration you would need to add the configuration above.]</p><p>init a.k.a monaco - (C) 2021</p></section>
+<span style="--colorFg:#dbdbdb; --colorFgAlpha:#dbdbdb1a; --colorFgIntense:#ffffff; --colorFgFaded:#d0d0d0; --colorFgFadedMore:#c5c5c5; --colorFgFadedMost:#acacac; --colorBg:#2f2f2f; --colorBgAlpha:#2f2f2fe6; --colorBgAlphaHeavy:#2f2f2fa6; --colorBgAlphaHeavier:#2f2f2f40; --colorBgAlphaBlur:#2f2f2ff2; --colorBgDark:#292929; --colorBgDarker:#242424; --colorBgLight:#333333; --colorBgLighter:#434343; --colorBgLightIntense:#373737; --colorBgIntense:#242424; --colorBgIntenser:#1c1c1c; --colorBgIntserAlpha:#191919eb; --colorBgInverse:#333333; --colorBgInverser:#3f3f3f; --colorBgFaded:#3b3b3b; --backgroundBlur:blur(10px); --colorHighlightBg:#579c8e; --colorHighlightBgUnfocused:#454545; --colorHighlightBgAlpha:#579c8e1a; --colorHighlightBgDark:#3f8477; --colorHighlightFg:#ffffff; --colorHighlightFgAlpha:#ffffff80; --colorHighlightFgAlphaHeavy:#ffffff40; --colorAccentBg:#404040; --colorAccentBgAlpha:#74747466; --colorAccentBgAlphaHeavy:#74747440; --colorAccentBgDark:#303030; --colorAccentBgDarker:#1a1a1a; --colorAccentBgFaded:#343434; --colorAccentBgFadedMore:#555555; --colorAccentBgFadedMost:#747474; --colorAccentBorder:#303030; --colorAccentBorderDark:#262626; --colorAccentFg:#ffffff; --colorAccentFgFaded:#cacaca; --colorAccentFgAlpha:#ffffff40; --colorBorder:#1c1c1c; --colorBorderDisabled:#242424; --colorBorderSubtle:#222222; --colorBorderIntense:#0c0c0c; --colorSuccessBg:#06a700; --colorSuccessBgAlpha:#06a7001a; --colorSuccessFg:#ffffff; --colorWarningBg:#efaf00; --colorWarningBgAlpha:#efaf001a; --colorWarningFg:#000000; --colorErrorBg:#c64539; --colorErrorBgAlpha:#c645391a; --colorErrorFg:#ffffff;"></span></body><span style="--colorFg:#dbdbdb; --colorFgAlpha:#dbdbdb1a; --colorFgIntense:#ffffff; --colorFgFaded:#d0d0d0; --colorFgFadedMore:#c5c5c5; --colorFgFadedMost:#acacac; --colorBg:#2f2f2f; --colorBgAlpha:#2f2f2fe6; --colorBgAlphaHeavy:#2f2f2fa6; --colorBgAlphaHeavier:#2f2f2f40; --colorBgAlphaBlur:#2f2f2ff2; --colorBgDark:#292929; --colorBgDarker:#242424; --colorBgLight:#333333; --colorBgLighter:#434343; --colorBgLightIntense:#373737; --colorBgIntense:#242424; --colorBgIntenser:#1c1c1c; --colorBgIntserAlpha:#191919eb; --colorBgInverse:#333333; --colorBgInverser:#3f3f3f; --colorBgFaded:#3b3b3b; --backgroundBlur:blur(10px); --colorHighlightBg:#579c8e; --colorHighlightBgUnfocused:#454545; --colorHighlightBgAlpha:#579c8e1a; --colorHighlightBgDark:#3f8477; --colorHighlightFg:#ffffff; --colorHighlightFgAlpha:#ffffff80; --colorHighlightFgAlphaHeavy:#ffffff40; --colorAccentBg:#404040; --colorAccentBgAlpha:#74747466; --colorAccentBgAlphaHeavy:#74747440; --colorAccentBgDark:#303030; --colorAccentBgDarker:#1a1a1a; --colorAccentBgFaded:#343434; --colorAccentBgFadedMore:#555555; --colorAccentBgFadedMost:#747474; --colorAccentBorder:#303030; --colorAccentBorderDark:#262626; --colorAccentFg:#ffffff; --colorAccentFgFaded:#cacaca; --colorAccentFgAlpha:#ffffff40; --colorBorder:#1c1c1c; --colorBorderDisabled:#242424; --colorBorderSubtle:#222222; --colorBorderIntense:#0c0c0c; --colorSuccessBg:#06a700; --colorSuccessBgAlpha:#06a7001a; --colorSuccessFg:#ffffff; --colorWarningBg:#efaf00; --colorWarningBgAlpha:#efaf001a; --colorWarningFg:#000000; --colorErrorBg:#c64539; --colorErrorBgAlpha:#c645391a; --colorErrorFg:#ffffff;"></span></html>

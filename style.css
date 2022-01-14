@@ -9,7 +9,13 @@
 body {
 background: whitesmoke;
 font-family: monospace;
-margin: 10px!important;
+}
+code {
+    background: #F5F5F5;
+    border: 1px
+    solid #AAAAAA;
+    overflow: auto;
+    padding: 10px
 }
 span.error {
 display: block;
@@ -17,10 +23,27 @@ padding: 5px;
 background: red;
 color: white;
 }
+error {
+display: block;
+padding: 5px;
+background: red;
+color: white;
+}
+hidden {
+visibility: hidden;
+padding: 0;
+margin: 0;
+}
 span.hidden {
 visibility: hidden;
 padding: 0;
 margin: 0;
+}
+success {
+display: block;
+padding: 5px;
+background: green;
+color: white;
 }
 span.success {
 display: block;
@@ -41,6 +64,13 @@ visibility: hidden;
 padding: 0;
 margin: 0;
 }
+cmdbox {
+    background: #F5F5F5;
+    border: 1px solid #AAAAAA;
+    overflow: auto;
+    padding: 10px;
+}
+
 pre.cmdbox {
     background: #F5F5F5;
     border: 1px solid #AAAAAA;
@@ -90,23 +120,3 @@ div.b {
 pre {
   word-wrap: break-word;
 }
-
-.pagination {
-  display: inline-block;
-  margin-top: 15px;
-}
-
-.pagination a {
-  color: black;
-  float: left;
-  border: #cecece 1px solid;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-.pagination a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.pagination a:hover:not(.active) {background-color: #ddd;}

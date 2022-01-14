@@ -4,7 +4,7 @@
    else ob_start();
 ?>
 <?php
-$ncsite="youresite.tld 7777";
+$ncsite="paste.oddprotocol.org 7777";
 ?>
 <html>
     <body>
@@ -22,7 +22,7 @@ $ncsite="youresite.tld 7777";
  |_|\_\___|___/___/_|_|_\___/
 </pre>
 </center><br>
-	<center><a href="./">Paste</a> | <a href="./archive.php">Archive</a></center>
+	<center><a href="./">Paste</a> | <a href="./archive.php">Archive</a> | <a href="./about.html">About</a> | <a href="./contact.php">Contact</a></center>
         <center><form name="form" method="post">
             <textarea name="text_box" cols="40" minlength="5" rows="5" placeholder="Paste your code here..." maxlength="1048576" style="margin: 0px; width: 80%; height: 249px;" required pattern="\S+" oninvalid="this.setCustomValidity('We apologize but we won`t allow empty paste!')" oninput="this.setCustomValidity('')"></textarea> 
 	<br>
@@ -33,7 +33,7 @@ $ncsite="youresite.tld 7777";
 	<br>
 	<center>Use this paste via terminal examples <span style="color:#e74c3c">"echo I was here | nc <?php echo"$ncsite";?>"</span> or <span style="color:#e74c3c">"cat example | nc <?php echo"$ncsite";?>"</span><center><br>
 	<center>KISS (Keep it simple, stupid) style pastebin developed from (monaco) with less than <span style="color:#e74c3c">70</span> Lines of code!</center>
-	<center>Running KISSmo v.1.0.0 stable > 1.5 KB, for any issue or request contact <a href="mailto:support@paste.oddprotocol.org">support@paste.oddprotocol.org</a> this is open-source project so feel free <a href="https://gitlab.com/hedho/KISSmo">Source avaliable at GitLab</a></center>
+	<center>Running KISSmo v.1.0.0 stable > 1.5 KB, for any issue or request contact <a href="./contact.php">Contact</a> this is open-source project so feel free <a href="https://github.com/hedho/KISSmo">Source avaliable at Github</a></center>
 	<br>
 <?php
 // Set the current working directory
@@ -57,7 +57,7 @@ echo $filecount . " paste files </center>";
     
 if(isset($_POST['text_box'])) { //only do file operations when appropriate
         
-	$sitename = "https://youresitename.tld/p";
+	$sitename = "https://paste.oddprotocol.org/p";
 	$a = $_POST['text_box'];
 	$powered = "### This content was generated under KISSmo Paste with love at this time:";
 	$tagz = "### ";
