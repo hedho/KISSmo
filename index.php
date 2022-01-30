@@ -24,7 +24,7 @@ $ncsite="paste.oddprotocol.org 7777";
 </center><br>
 	<center><a href="./">Paste</a> | <a href="./archive.php">Archive</a> | <a href="./about.html">About</a> | <a href="./contact.php">Contact</a></center>
         <center><form name="form" method="post">
-            <textarea name="text_box" cols="40" minlength="5" rows="5" placeholder="Paste your code here..." maxlength="1048576" style="margin: 0px; width: 80%; height: 249px;" required pattern="\S+" oninvalid="this.setCustomValidity('We apologize but we won`t allow empty paste!')" oninput="this.setCustomValidity('')"></textarea> 
+            <textarea name="text_box" cols="40" minlength="5" rows="5" placeholder="Paste your code here..." maxlength="1048576" style="margin: 0px; width: 80%; height: 249px;" required pattern="\S+" oninvalid="this.setCustomValidity('We apologize but we won`t allow empty paste!')" oninput="this.setCustomValidity('')"></textarea></center>
 	<br>
 	<br>
             <input type="submit" id="search-submit" value="Paste it!" />
