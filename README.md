@@ -19,7 +19,7 @@ Replace respective codes above to represent you're site.
 
 This configuration is needed in order to include fiche at you're build for nginx, apply this changes to you're nginx.conf for you're respective site:
 
-```
+```c
     location /p/ {
    alias /home/admin/web/paste.oddprotocol.org/public_html/p/;
    index index.txt;
@@ -29,7 +29,7 @@ This configuration is needed in order to include fiche at you're build for nginx
 
 This configuration is needed for you're OpenHTTPD if you're running OpenBSD, apply this changes on you're httpd.conf for you're respective site:
 
-```
+```c
 	location "/test/p/*" { 
 		directory { auto index, index "index.txt" }
 	}
@@ -40,7 +40,7 @@ KISSmo is fully compatible with Terminal Lynx or other terminal browsers!
 
 Disable searching feature:
 Open archive.php and remove this specific code as followed >
-```
+```html
 </center><br>
 	<center><form method="POST" action="archive.php" class="search" enctype="multipart/form-data" autocomplete="off">
        <input type="text" name="query" maxlength=75 class="searchbox" minlength=3 placeholder="Enter keywords" required>
@@ -49,3 +49,11 @@ Open archive.php and remove this specific code as followed >
 ```
 
 Developed by monaco (C)
+
+#Credits for This Project
+
+Error @ODDPROTOCOL
+Hawk @ODDPROTOCOL
+
+
+
