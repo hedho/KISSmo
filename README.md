@@ -48,8 +48,6 @@ Open archive.php and remove this specific code as followed >
 </form></center>
 ```
 
-Developed by monaco (C)
-
 #Credits for This Project
 
 Error @ODDPROTOCOL
