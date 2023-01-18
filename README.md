@@ -50,8 +50,7 @@ Open archive.php and remove this specific code as followed >
 
 #Credits for This Project
 
-Error @ODDPROTOCOL
-Hawk @ODDPROTOCOL
+IRCnow
 
 
 
